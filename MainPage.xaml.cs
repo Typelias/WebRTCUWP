@@ -81,9 +81,11 @@ namespace WebRTCUWP
             await _peerConnection.InitializeAsync(config);
             _peerConnection.Connected += () => {
                 Debugger.Log(0, "", "PeerConnection: connected.\n");
+                Console.WriteLine("PeerConnection: connected");
             };
             _peerConnection.IceStateChanged += (IceConnectionState newState) => {
                 Debugger.Log(0, "", $"ICE state: {newState}\n");
+                Console.WriteLine($"ICE state: {newState}");
             };
             Debugger.Log(0, "", "Peer connection initialized successfully.\n");
 
@@ -120,7 +122,7 @@ namespace WebRTCUWP
 
             _signaler = new NodeDssSignaler()
             {
-                HttpServerAddress = "http://127.0.0.1:3000/",
+                HttpServerAddress = "http://localhost:3000/",
                 LocalPeerId = "App1",
                 RemotePeerId = "other"
             };
