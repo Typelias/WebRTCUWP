@@ -70,6 +70,7 @@ namespace WebRTCUWP
             foreach (var device in deviceList)
             {
                 Debugger.Log(0, "", $"Webcam {device.name} (id: {device.id})\n");
+                Console.WriteLine($"Webcam {device.name} (id: {device.id})");
             }
 
             _peerConnection = new PeerConnection();
@@ -290,6 +291,7 @@ namespace WebRTCUWP
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            Debugger.Log(0, "", "Button Clicked MF\n");
             _peerConnection.CreateOffer();
         }
     }
